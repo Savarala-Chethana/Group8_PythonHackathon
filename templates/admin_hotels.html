@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing head content here -->
+</head>
+<body background="../static/images/bg.png">
+    <div class="container">
+
+    <center>
+        <h1><strong>Admin Dashboard</strong></h1>
+
+    <h1> Hotels</h1>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th> Hotel ID</th>
+                <th> Hotel Name</th>
+                <th> Place</th>
+                <th> Address</th>
+                <th> Price</th>
+                <th> </th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in sqldata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                        <td>
+                            <form action="/deletehotel" method='POST'>
+                            <input type="hidden" name="hotel_id" value="{{i[0]}}">
+                            <button type="submit">Delete</button>
+                        </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+
+    <div class="button-row">
+        <a href="hotel_bookings_visualization.html" class="btn btn-secondary">Visualization</a>
+    </div>
+
+    <div class="button-row">
+        <a href="/adminn" class="btn btn-secondary">Logout</a>
+    </div>
+
+</center>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .footer {
+            background-color: #F0EDE0;
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #F0EDE0;
+            padding: 5px;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            height: 75px;
+            width: auto;
+            margin: 0 5px;
+        }
+
+        .logo-amrita {
+            height: 36px;
+            width: auto;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        }
+        .h1-header {
+            color: #2b2c2b;
+            text-align: center;
+            font-family: 'Garamond', serif;
+        }
+        .form-group label {
+            color: #555;
+        }
+        .form-control {
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        .btn-primary {
+            background-color: #ff6b6b;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #e63946;
+        }
+
+    </style>
+</head>
+<body background="../static/images/image.png">
+    <div class="header">
+        <div class="title">
+            <h1 class="h1-header"><b>Trip Trove</b></h1>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="h1-header"><b>Admin Login</b></h1>
+        <form action="/adminlogin" method="post" autocomplete="off">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p><b>&copy; 2023 Trip Trove. All rights reserved. | Contact: trip_trove@gmail.com</b></p>
+    </div>
+
+
+</body>
+</html>

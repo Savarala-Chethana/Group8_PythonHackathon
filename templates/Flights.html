@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="../static/css/home_styles.css">
+    <title>View All</title>
+</head>
+<body background="../static/images/bg.png">
+    <div class="header">
+        <div class="title">
+            <h1 class="h1-header"><b>Trip Trove</b></h1>
+        </div>
+    </div>
+ 
+    <nav>
+        <a href="dashboard">Dashboard</a>
+        <a href="services">Services</a>
+        <a href="aboutus">About Us</a>
+        <a href="contactus">Contact Us</a>
+        <a href="logout">Logout</a>
+    </nav>
+    <br>
+    <center>
+    <h1> Flights List</h1>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th> Flight Number</th>
+                <th> Flight Name</th>
+                <th> Boarding Place</th>
+                <th> Destination Place</th>
+                <th> Start Time</th>
+                <th> Reaching Time</th>
+                <th> Price</th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in sqldata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[6]}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+ 
+    </table>
+    <br>
+    <div class="mt-4">
+        <a href="/flightbooking" class="btn btn-primary mr-2">Book Now</a><br><br>
+    </div>
+    <br><br><br><br>
+</center>
+</body>
+<div class="footer">
+    <p><b>&copy; 2024 Trip Trove. All rights reserved. | Contact: trip_trove@gmail.com</b></p>
+</div>
+</html>

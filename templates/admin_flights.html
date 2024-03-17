@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Your existing head content here -->
+</head>
+<body background="../static/images/bg.png">
+    <div class="container">
+        <center>
+        <h1><strong>Admin Dashboard</strong></h1>
+
+        <!-- Flight Table -->
+        <h1> Flights List</h1>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th> Flight Number</th>
+                <th> Flight Name</th>
+                <th> Boarding Place</th>
+                <th> Destination Place</th>
+                <th> Start Time</th>
+                <th> Reaching Time</th>
+                <th> Price</th>
+                <th></th>
+ 
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in sqldata %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+                <td>{{i[3]}}</td>
+                <td>{{i[4]}}</td>
+                <td>{{i[5]}}</td>
+                <td>{{i[6]}}</td>
+                <td>
+                    <form action="/deleteflight" method='POST'>
+                    <input type="hidden" name="flight_number" value="{{i[0]}}">
+                    <button type="submit">Delete</button>
+                </form>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>
+ 
+    </table>
+
+    </div>
+    <br><br><br>
+
+    <div class="button-row">
+        <a href="/flightbookings_visualization" class="btn btn-secondary">Visualization</a>
+    </div><br>
+
+    <div class="button-row">
+        <a href="/adminn" class="btn btn-secondary">Logout</a>
+    </div>
+
+</center>
+
+</body>
+</html>

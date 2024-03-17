@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <link rel="stylesheet" href="../static/css/dashboard_styles.css" >
+   
+</head>
+<body background="../static/images/3.png">
+    <div class="header">
+        <div class="title">
+            <h1 class="h1-header"><b>Trip Trove</b></h1>
+        </div>
+    </div>
+ 
+    <nav>
+        <a href="dashboard">Dashboard</a>
+        <a href="services">Services</a>
+        <a href="aboutus">About Us</a>
+        <a href="contactus">Contact Us</a>
+        <a href="logout">Logout</a>
+    </nav>
+    <br>
+<center>
+
+    <form id = "bookflightform" action="/flightbooking" method="POST">
+ 
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+ 
+        <label>Flight Number:</label>
+            <select name="flight_number" class="form-control">
+                <option value="">All Flights</option>
+                {% for flight in flights %}
+                    <option value="{{ flight }}">{{ flight }}</option>
+                {% endfor %}
+            </select><br><br>
+
+            <label for="bookdate">Date:</label>
+            <input type="date"  id="date">
+        
+ 
+        <button type="button" onclick="submitForm()">Book Now</button>
+    </form>
+
+    
+</center>
+<br><br><br>
+</body>
+<div class="footer">
+    <p><b>&copy; 2023 Trip Trove. All rights reserved. | Contact: trip_trove@gmail.com</b></p>
+</div>
+<script>
+    function submitForm(){
+        document.getElementById("bookflightform").submit();
+        alert("Hotel Booked successfully!");
+    }
+</script>
+</html>
